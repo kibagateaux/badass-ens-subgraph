@@ -1,0 +1,26 @@
+{
+  "name": "@scaffold-eth/subgraph",
+  "license": "UNLICENSED",
+  "version": "1.0.0",
+  "scripts": {
+    "codegen": "graph codegen --output-dir src/types/",
+    "build": "graph build",
+    "setup": "npm run codegen && npm run create-local && npm run deploy-local",
+    "predeploy": "yarn run codegen",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ kibagateaux/badassens",
+    "create": "graph create  --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ kibagateaux/badassens",
+    "remove-local": "graph remove --node http://localhost:8020/ kibagateaux/badassens",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 kibagateaux/badassens",
+    "docker:setup": "npm run codegen && npm run docker:create-local && npm run docker:deploy-local",
+    "docker:create-local": "graph create graphprotocol/ens --node http://ens-app_graph-node_1:8020",
+    "docker:deploy-local": "graph deploy graphprotocol/ens --debug --ipfs http://ens-app_ipfs_1:5001 --node http://ens-app_graph-node_1:8020/",
+    "docker:remove-local": "graph remove graphprotocol/ens --node http://ens-app_graph-node_1:8020",
+    "watch-local": "graph deploy graphprotocol/ens --watch --debug --node http://127.0.0.1:8020/ --ipfs http://localhost:5001"
+  },
+  "devDependencies": {
+    "@graphprotocol/graph-cli": "0.18.0",
+    "@graphprotocol/graph-ts": "0.18.0",
+    "@ensdomains/content-hash": "^2.5.3",
+    "mustache": "^3.1.0"
+  }
+}

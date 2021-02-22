@@ -1,0 +1,6 @@
+{
+  "ENSRegistryAddress": "0x36fc69f0983E536D1787cC83f481581f22CCA2A1",
+  "BaseRegistrarAddress": "0xa271897710a2B22f7A5bE5fEaCb00811d960e0b8",
+  "RegistrarControllerAddress": "0x82994379b1ec951c8e001dfcec2a7ce8f4f39b97",
+  "PublicResolverAddress": "0x4976fb03c32e5b8cfe2b6ccb31c09ba78ebaba41"
+}
